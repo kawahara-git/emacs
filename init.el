@@ -10,7 +10,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(elpy helm-gtags helm-etags-plus neotree solarized-theme tabbar flycheck company)))
+   '(company-jedi elpy helm-gtags helm-etags-plus neotree solarized-theme tabbar flycheck company)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -65,12 +65,12 @@
 ;;ビープ音を消す
 (setq ring-bell-function 'ignore)
 
-;; タブの無効化
-(setq-default indent-tabs-mode nil)
-;;(setq-default tab-width 4 indent-tabs-mode nil)
-
 ;; クリップボードにコピー
 (setq x-select-enable-clipboard t)
+
+;; タブの無効化
+(setq-default indent-tabs-mode nil)
+;; (setq-default tab-width 4 indent-tabs-mode nil)
 
 ;; コメントアウトの設定
 (setq comment-style 'multi-line)
@@ -213,3 +213,10 @@
 ;; ctag
 (global-set-key (kbd "M-.") 'helm-etags-select)
 (global-set-key (kbd "M-,") 'pop-tag-mark)
+
+;; jedi
+;; (require 'jedi-core)
+;; (setq jedi:complete-on-dot t)
+;; (setq jedi:use-shortcuts t)
+;; (add-hook 'python-mode-hook 'jedi:setup)
+;; (add-to-list 'company-backends 'company-jedi) 
